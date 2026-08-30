@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Kami - Pondok Pesantren Tahfidz Quran Riyadhul Quran.">
+    <title>Riyadhul Quran - Hubungi Kami</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav id="site-navbar" class="navbar navbar-expand-lg sticky-top"></nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Hubungi Kami</h1>
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Hubungi Kami</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Kontak -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="row">
+                <!-- Info Kontak -->
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h3 class="mb-4" style="color: var(--primary-color); font-weight: 700;">Info Kontak</h3>
+                    <ul class="contact-info ps-0 fs-5">
+                        <li><i class="fa-solid fa-location-dot"></i> Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta</li>
+                    </ul>
+                    <h5 class="mt-4 mb-3" style="color: var(--primary-color); font-weight: 600;">Jam Pelayanan</h5>
+                    <p class="text-muted mb-1">Senin - Jumat : 07.30 - 15.30 WIB</p>
+                    <p class="text-muted">Sabtu : 08.00 - 12.00 WIB</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 fs-2 text-muted"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="me-3 fs-2 text-muted"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="fs-2 text-muted"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <!-- Formulir Kontak -->
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm p-4">
+                        <h4 class="mb-4" style="color: var(--primary-color); font-weight: 600;">Kirim Pesan</h4>
+                        <form id="form-kontak">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Nama Lengkap</label>
+                                    <input type="text" name="nama" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Subjek</label>
+                                    <input type="text" name="subjek" class="form-control" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Pesan</label>
+                                    <textarea name="pesan" class="form-control" rows="5" required></textarea>
+                                </div>
+                            </div>
+                            <div id="kontak-alert" class="alert d-none" role="alert"></div>
+                            <button type="submit" id="kontak-btn" class="btn btn-login px-4"><i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peta -->
+    <section class="pb-5">
+        <div class="container">
+            <div class="card border-0 shadow-sm overflow-hidden">
+                <iframe src="https://maps.google.com/maps?q=-7.850461,110.2631047&z=15&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('form-kontak').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            var alertBox = document.getElementById('kontak-alert');
+            var btn = document.getElementById('kontak-btn');
+            var data = Object.fromEntries(new FormData(this).entries());
+            alertBox.classList.add('d-none');
+            btn.disabled = true;
+            try {
+                var res = await fetch('/api/kontak', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                var json = await res.json();
+                if (res.ok) {
+                    alertBox.className = 'alert alert-success';
+                    alertBox.textContent = 'Terima kasih! Pesan Anda telah terkirim.';
+                    this.reset();
+                } else {
+                    alertBox.className = 'alert alert-danger';
+                    alertBox.textContent = json.error || 'Gagal mengirim pesan.';
+                }
+            } catch (err) {
+                alertBox.className = 'alert alert-danger';
+                alertBox.textContent = 'Tidak dapat terhubung ke server.';
+            }
+            alertBox.classList.remove('d-none');
+            btn.disabled = false;
+        });
+    </script>
+</body>
+</html>
