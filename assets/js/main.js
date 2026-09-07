@@ -154,4 +154,141 @@ window.REGISTRATION_URL = 'https://psb.riyadhulquran.sch.id';
         btn.target = '_blank';
         btn.rel = 'noopener';
     });
+
+    // ===== Load & Display Data Dari Admin Panel =====
+    
+    // Load Hero Photos
+    window.loadHeroPhotos = function() {
+        for (let i = 1; i <= 3; i++) {
+            const imgData = localStorage.getItem(`img_hero-${i}.jpg`);
+            if (imgData) {
+                const carouselItem = document.querySelector(`.carousel-item:nth-child(${i})`);
+                if (carouselItem) {
+                    carouselItem.style.backgroundImage = `url('${imgData}')`;
+                }
+            }
+        }
+    };
+
+    // Load Profil Photo
+    window.loadProfilPhoto = function() {
+        const imgData = localStorage.getItem('img_profil.jpg');
+        if (imgData) {
+            const profileImg = document.getElementById('profil-photo');
+            if (profileImg) {
+                profileImg.src = imgData;
+            }
+        }
+    };
+
+    // Load & Display Pengurus Data
+    window.loadPengurusData = function(unit) {
+        const pengurusData = JSON.parse(localStorage.getItem(`pengurus_${unit}`) || '{}');
+        
+        if (unit === 'ma') {
+            if (pengurusData.kepala) {
+                const elements = document.querySelectorAll('[data-role="ma-kepala"]');
+                elements.forEach(el => el.textContent = pengurusData.kepala);
+            }
+            if (pengurusData.wakil) {
+                const elements = document.querySelectorAll('[data-role="ma-wakil"]');
+                elements.forEach(el => el.textContent = pengurusData.wakil);
+            }
+            if (pengurusData.tahfidz) {
+                const elements = document.querySelectorAll('[data-role="ma-tahfidz"]');
+                elements.forEach(el => el.textContent = pengurusData.tahfidz);
+            }
+        }
+        else if (unit === 'pkbm') {
+            if (pengurusData.ketua) {
+                const elements = document.querySelectorAll('[data-role="pkbm-ketua"]');
+                elements.forEach(el => el.textContent = pengurusData.ketua);
+            }
+            if (pengurusData.sekretaris) {
+                const elements = document.querySelectorAll('[data-role="pkbm-sekretaris"]');
+                elements.forEach(el => el.textContent = pengurusData.sekretaris);
+            }
+            if (pengurusData.bendahara) {
+                const elements = document.querySelectorAll('[data-role="pkbm-bendahara"]');
+                elements.forEach(el => el.textContent = pengurusData.bendahara);
+            }
+        }
+        else if (unit === 'putri') {
+            if (pengurusData.kepala) {
+                const elements = document.querySelectorAll('[data-role="putri-kepala"]');
+                elements.forEach(el => el.textContent = pengurusData.kepala);
+            }
+            if (pengurusData.tahfidz) {
+                const elements = document.querySelectorAll('[data-role="putri-tahfidz"]');
+                elements.forEach(el => el.textContent = pengurusData.tahfidz);
+            }
+            if (pengurusData.pembina) {
+                const elements = document.querySelectorAll('[data-role="putri-pembina"]');
+                elements.forEach(el => el.textContent = pengurusData.pembina);
+            }
+        }
+        else if (unit === 'mts') {
+            if (pengurusData.kepala) {
+                const elements = document.querySelectorAll('[data-role="mts-kepala"]');
+                elements.forEach(el => el.textContent = pengurusData.kepala);
+            }
+            if (pengurusData.wakil) {
+                const elements = document.querySelectorAll('[data-role="mts-wakil"]');
+                elements.forEach(el => el.textContent = pengurusData.wakil);
+            }
+            if (pengurusData.tahfidz) {
+                const elements = document.querySelectorAll('[data-role="mts-tahfidz"]');
+                elements.forEach(el => el.textContent = pengurusData.tahfidz);
+            }
+        }
+    };
+
+    // Load & Display Kontak Info
+    window.loadKontakInfo = function() {
+        const kontakInfo = JSON.parse(localStorage.getItem('kontak_info') || '{}');
+        
+        if (kontakInfo.wa) {
+            const waLinks = document.querySelectorAll('[data-link="wa"]');
+            waLinks.forEach(el => {
+                el.href = `https://wa.me/62${kontakInfo.wa}`;
+                el.textContent = '+62' + kontakInfo.wa;
+            });
+        }
+        
+        if (kontakInfo.email) {
+            const emailLinks = document.querySelectorAll('[data-link="email"]');
+            emailLinks.forEach(el => {
+                el.href = `mailto:${kontakInfo.email}`;
+                el.textContent = kontakInfo.email;
+            });
+        }
+        
+        if (kontakInfo.fb) {
+            const fbLinks = document.querySelectorAll('[data-link="fb"]');
+            fbLinks.forEach(el => el.href = kontakInfo.fb);
+        }
+        
+        if (kontakInfo.ig) {
+            const igLinks = document.querySelectorAll('[data-link="ig"]');
+            igLinks.forEach(el => el.href = kontakInfo.ig);
+        }
+        
+        if (kontakInfo.yt) {
+            const ytLinks = document.querySelectorAll('[data-link="yt"]');
+            ytLinks.forEach(el => el.href = kontakInfo.yt);
+        }
+    };
+
+    // Initialize semua data pada page load
+    document.addEventListener('DOMContentLoaded', function() {
+        loadHeroPhotos();
+        loadProfilPhoto();
+        loadKontakInfo();
+        
+        // Load semua unit
+        loadPengurusData('ma');
+        loadPengurusData('pkbm');
+        loadPengurusData('putri');
+        loadPengurusData('mts');
+    });
 })();

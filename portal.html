@@ -105,7 +105,15 @@
                 if (res.ok) {
                     alertBox.className = 'alert alert-success';
                     alertBox.textContent = 'Berhasil masuk. Selamat datang, ' + json.user.nama + '!';
+                    
+                    // Simpan user data ke localStorage
+                    localStorage.setItem('user_portal', JSON.stringify(json.user));
                     localStorage.setItem('pp_wali', JSON.stringify(json.user));
+                    
+                    // Redirect ke dashboard setelah 1 detik
+                    setTimeout(function() {
+                        window.location.href = 'portal-dashboard.html';
+                    }, 1000);
                 } else {
                     alertBox.className = 'alert alert-danger';
                     alertBox.textContent = json.error || 'Gagal masuk.';
