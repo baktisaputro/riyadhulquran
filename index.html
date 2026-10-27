@@ -5,134 +5,265 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pondok Pesantren Tahfidz Quran Riyadhul Quran - Mencetak generasi penghafal Al-Qur'an yang berakhlakul karimah.">
     <title>Riyadhul Quran - Beranda</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+    <!-- Top Bar -->
+    <div class="top-bar d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="fa-solid fa-location-dot me-2"></i> Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta
+            </div>
+            <div>
+                <a href="portal.html"><i class="fa-solid fa-user-group me-1"></i> Portal Wali</a>
+                <a href="admin-login.html"><i class="fa-solid fa-gauge me-1"></i> Admin</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
     <nav id="site-navbar" class="navbar navbar-expand-lg sticky-top"></nav>
 
-    <!-- Carousel Header -->
-    <header id="beranda" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#beranda" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#beranda" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#beranda" data-bs-slide-to="2"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('assets/img/hero-1.jpg')">
-                <div class="carousel-overlay"></div>
-                <div class="carousel-caption">
-                    <h2>Membentuk Generasi Hafizh Qur'ani</h2>
-                    <p class="lead">Tahfidz Al-Qur'an sebagai fondasi akhlak dan kecintaan generasi muda terhadap Kitabullah.</p>
-                    <a href="psb.html" class="btn btn-login btn-lg mt-3">Daftar Sekarang</a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <p class="text-uppercase fw-bold mb-2" style="color: var(--accent-gold); font-size: 0.85rem; letter-spacing: 2px;">Pondok Pesantren Tahfidz Quran</p>
+                    <h1 class="hero-title mb-3">Membentuk Hafizh.<br><span>Berakhlak Mulia.</span></h1>
+                    <p class="lead text-muted mb-4">Lingkungan pendidikan yang kondusif, tempat para santri menghafal Al-Qur'an, tumbuh, dan berkembang menjadi generasi rabbani yang siap memberikan kontribusi nyata bagi umat.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="psb.html" class="btn btn-apply text-decoration-none">DAFTAR SEKARANG <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                        <a href="profil.html" class="btn btn-outline-dark text-decoration-none"><i class="fa-solid fa-mosque me-2"></i> TENTANG KAMI</a>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('assets/img/hero-2.jpg')">
-                <div class="carousel-overlay"></div>
-                <div class="carousel-caption">
-                    <h2>Fasilitas Pembelajaran Modern</h2>
-                    <p class="lead">Menggabungkan kurikulum pesantren salaf dan pendidikan akademik nasional.</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('assets/img/hero-3.jpg')">
-                <div class="carousel-overlay"></div>
-                <div class="carousel-caption">
-                    <h2>Lingkungan Asri & Nyaman</h2>
-                    <p class="lead">Asrama yang representatif untuk mendukung fokus hafalan dan belajar santri.</p>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1609599006353-e629aaab31ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Santri Menghafal Al-Qur'an" class="img-fluid rounded shadow-lg" style="max-height:420px; width:100%; object-fit:cover;">
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#beranda" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#beranda" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </header>
+    </section>
 
-    <!-- Profil Section -->
-    <section id="profil" class="py-5">
-        <div class="container py-5">
+    <!-- Floating Info Bar -->
+    <div class="container">
+        <div class="floating-bar d-none d-lg-block">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <div class="info-item">
+                        <i class="fa-solid fa-book-quran"></i>
+                        <div>
+                            <h6>Pendidikan Holistik</h6>
+                            <p>Paduan Salaf & Modern</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info-item">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        <div>
+                            <h6>Asatidz Kompeten</h6>
+                            <p>Lulusan Dalam & Luar Negeri</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info-item">
+                        <i class="fa-solid fa-star-and-crescent"></i>
+                        <div>
+                            <h6>Tahfidz Al-Qur'an</h6>
+                            <p>Target 30 Juz Terstruktur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info-item border-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h6>Lingkungan Aman</h6>
+                            <p>Pengawasan 24 Jam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <p class="section-label">TENTANG PONDOK KAMI</p>
+                    <h2 class="serif-font fw-bold" style="color: var(--primary-green);">Keunggulan dalam Pendidikan Islami</h2>
+                    <p class="subtitle mb-4">Karakter untuk Kehidupan</p>
+                    <p class="text-muted mb-4">Pondok Pesantren Tahfidz Quran Riyadhul Quran didirikan pada tahun 2014, membimbing santri menghafal dan mengamalkan Al-Qur'an dengan bimbingan terarah. Kami memadukan program tahfidz intensif dengan pendidikan akademik nasional.</p>
+                    <a href="profil.html" class="btn btn-green text-decoration-none">BACA SELENGKAPNYA <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+                    <img src="https://images.unsplash.com/photo-1577894228498-854728522300?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gedung Pesantren" class="img-fluid rounded shadow" style="max-height:360px; width:100%; object-fit:cover;">
+                </div>
+                <div class="col-lg-3">
+                    <div class="stat-card">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <div>
+                            <h5>2014</h5>
+                            <p>Tahun Berdiri</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-mosque"></i>
+                        <div>
+                            <h5>4 Unit</h5>
+                            <p>MTs, MA, PKBM, Putri</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fa-solid fa-book-quran"></i>
+                        <div>
+                            <h5>30 Juz</h5>
+                            <p>Target Hafalan Santri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs-section text-center">
+        <div class="container">
+            <p class="section-label">UNIT PESANTREN</p>
+            <h2 class="serif-font fw-bold mb-5" style="color: var(--primary-green);">Satuan Pendidikan Kami</h2>
+            <div class="row text-start">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="program-card">
+                        <div class="program-card-header" style="background: #2563eb;">
+                            <i class="fa-solid fa-book-open fa-2x text-white"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Madrasah Tsanawiyah</h5>
+                            <p>Membangun fondasi ilmu agama dan akademik yang kuat untuk jenjang menengah pertama.</p>
+                            <a href="unit-mts.html" class="btn-link-green">Lihat Profil <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="program-card">
+                        <div class="program-card-header" style="background: var(--primary-green);">
+                            <i class="fa-solid fa-graduation-cap fa-2x text-white"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Madrasah Aliyah</h5>
+                            <p>Persiapan menuju perguruan tinggi dengan pendalaman tahfidz dan ilmu agama.</p>
+                            <a href="unit-ma.html" class="btn-link-green">Lihat Profil <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="program-card">
+                        <div class="program-card-header" style="background: #ea580c;">
+                            <i class="fa-solid fa-school fa-2x text-white"></i>
+                        </div>
+                        <div class="content">
+                            <h5>PKBM</h5>
+                            <p>Pendidikan kesetaraan dan pengembangan keterampilan untuk semua kalangan.</p>
+                            <a href="unit-pkbm.html" class="btn-link-green">Lihat Profil <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="program-card">
+                        <div class="program-card-header" style="background: #e11d48;">
+                            <i class="fa-solid fa-person-dress fa-2x text-white"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Pondok Putri</h5>
+                            <p>Asrama khusus santri putri dengan pembinaan tahfidz dan pengawasan ketat 24 jam.</p>
+                            <a href="unit-putri.html" class="btn-link-green">Lihat Profil <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="unit.html" class="btn btn-green mt-3 text-decoration-none">LIHAT SEMUA UNIT <i class="fa-solid fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4 mb-md-0 stat-banner-item">
+                    <i class="fa-solid fa-landmark fs-1 mb-2"></i>
+                    <h2>2014</h2>
+                    <p class="mb-0 text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Tahun Berdiri</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0 stat-banner-item">
+                    <i class="fa-solid fa-user-graduate fs-1 mb-2"></i>
+                    <h2>150+</h2>
+                    <p class="mb-0 text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Santri Aktif</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0 stat-banner-item">
+                    <i class="fa-solid fa-chalkboard-user fs-1 mb-2"></i>
+                    <h2>30+</h2>
+                    <p class="mb-0 text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Asatidz & Guru</p>
+                </div>
+                <div class="col-md-3 stat-banner-item">
+                    <i class="fa-solid fa-trophy fs-1 mb-2"></i>
+                    <h2>20+</h2>
+                    <p class="mb-0 text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Prestasi Diraih</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Section -->
+    <section class="about-section">
+        <div class="container">
+            <p class="section-label text-center">KANAL BERITA</p>
+            <h2 class="serif-font fw-bold text-center mb-5" style="color: var(--primary-green);">Berita & Artikel Terkini</h2>
+            <div id="berita-container" class="row"></div>
+            <div id="berita-loading" class="text-center text-muted py-4">
+                <i class="fa-solid fa-spinner fa-spin me-2"></i>Memuat berita...
+            </div>
+            <div class="text-center mt-4">
+                <a href="berita.html" class="btn btn-green text-decoration-none">LIHAT SEMUA BERITA <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="assets/img/profil.jpg" alt="Gedung Pesantren" class="img-fluid rounded shadow">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pendaftaran Santri Baru" class="img-fluid rounded shadow-lg" style="max-height:420px; width:100%; object-fit:cover;">
                 </div>
-                <div class="col-lg-6 px-lg-5">
-                    <h2 class="mb-4" style="color: var(--primary-color); font-weight: 700;">Profil Pesantren</h2>
-                    <p>Pondok Pesantren Tahfidz Quran Riyadhul Quran didirikan pada tahun 2014 dengan fokus utama pada program tahfidz Al-Qur'an. Kami membimbing santri untuk menghafal dan mengamalkan Al-Qur'an dengan bimbingan yang terarah dan penuh kasih.</p>
-                    <p>Dengan tenaga pengajar lulusan terkemuka dalam dan luar negeri, kami berkomitmen membimbing putra-putri Anda menjadi penghafal Al-Qur'an yang berakhlak mulia.</p>
-                    <a href="profil.html" class="btn btn-outline-success mt-3">Baca Selengkapnya</a>
+                <div class="col-lg-6 ps-lg-5">
+                    <p class="section-label">PENERIMAAN SANTRI BARU</p>
+                    <h2 class="serif-font fw-bold mb-3" style="color: var(--primary-green);">Mulai Perjalanan Menuju Generasi Qur'ani</h2>
+                    <p class="text-muted mb-4">Bergabunglah bersama kami, tempat putra-putri Anda akan dibimbing menghafal Al-Qur'an, dibentuk akhlaknya, dan dipersiapkan menjadi generasi yang bermanfaat bagi umat.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fa-solid fa-check-circle me-2" style="color: var(--accent-gold);"></i> Gelombang I: 1 Agustus – 31 Oktober 2026</li>
+                        <li class="mb-2"><i class="fa-solid fa-check-circle me-2" style="color: var(--accent-gold);"></i> Gelombang II: 1 November – 31 Desember 2026</li>
+                        <li class="mb-2"><i class="fa-solid fa-check-circle me-2" style="color: var(--accent-gold);"></i> Gelombang III: 1 Januari – 28 Februari 2027</li>
+                    </ul>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="psb.html" class="btn btn-apply text-decoration-none">DAFTAR SEKARANG <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                        <a href="kontak.html" class="btn btn-outline-dark text-decoration-none"><i class="fa-solid fa-phone me-2"></i> HUBUNGI KAMI</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Fasilitas Section -->
-    <section id="fasilitas" class="py-5 bg-light">
-        <div class="container py-5">
-            <h2 class="section-title">Fasilitas Kami</h2>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <i class="fa-solid fa-mosque fasilitas-icon"></i>
-                    <h4>Masjid Jami'</h4>
-                    <p class="text-muted">Masjid luas yang menjadi pusat kegiatan spiritual dan ibadah harian santri.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fa-solid fa-bed fasilitas-icon"></i>
-                    <h4>Asrama Nyaman</h4>
-                    <p class="text-muted">Asrama putra dan putri yang terpisah dengan pengawasan ketat 24 jam.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fa-solid fa-book-open fasilitas-icon"></i>
-                    <h4>Perpustakaan</h4>
-                    <p class="text-muted">Koleksi kitab kuning dan buku referensi akademik yang lengkap.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fa-solid fa-computer fasilitas-icon"></i>
-                    <h4>Lab Komputer</h4>
-                    <p class="text-muted">Fasilitas teknologi modern untuk mendukung pembelajaran IT santri.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fa-solid fa-stethoscope fasilitas-icon"></i>
-                    <h4>Poskestren</h4>
-                    <p class="text-muted">Pos Kesehatan Pesantren dengan tenaga medis profesional bersiaga.</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <i class="fa-solid fa-futbol fasilitas-icon"></i>
-                    <h4>Sarana Olahraga</h4>
-                    <p class="text-muted">Lapangan futsal, basket, dan badminton untuk kebugaran fisik santri.</p>
-                </div>
-            </div>
-            <div class="text-center mt-2">
-                <a href="fasilitas.html" class="btn btn-outline-success">Lihat Semua Fasilitas</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kanal Berita Section -->
-    <section id="berita" class="py-5">
-        <div class="container py-5">
-            <h2 class="section-title">Berita & Artikel Terkini</h2>
-            <div id="berita-container" class="row"></div>
-            <div class="text-center mt-4">
-                <a href="berita.html" class="btn btn-outline-success">Lihat Semua Berita</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Banner Pendaftaran (Call to Action) -->
-    <section id="psb" class="py-5 cta-banner">
-        <div class="container text-center py-4">
-            <h2 class="mb-3">Penerimaan Santri Baru (PSB) Terbuka!</h2>
-            <p class="lead mb-4">Mari bergabung bersama kami menjadi bagian dari generasi Qur'ani yang unggul dalam Imtaq dan Iptek.</p>
-            <a href="psb.html" class="btn btn-light btn-lg me-2 text-success fw-bold">Daftar Online</a>
-            <a href="#" class="btn btn-outline-light btn-lg">Unduh Brosur</a>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer id="site-footer"></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

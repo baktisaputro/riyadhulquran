@@ -7,14 +7,23 @@
     <title>Riyadhul Quran - Hubungi Kami</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+    <div class="top-bar d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div><i class="fa-solid fa-location-dot me-2"></i> Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta</div>
+            <div>
+                <a href="portal.html"><i class="fa-solid fa-user-group me-1"></i> Portal Wali</a>
+                <a href="admin-login.html"><i class="fa-solid fa-gauge me-1"></i> Admin</a>
+            </div>
+        </div>
+    </div>
+
     <nav id="site-navbar" class="navbar navbar-expand-lg sticky-top"></nav>
 
-    <!-- Page Header -->
     <header class="page-header">
         <div class="container">
             <h1>Hubungi Kami</h1>
@@ -27,53 +36,83 @@
         </div>
     </header>
 
-    <!-- Kontak -->
-    <section class="py-5">
-        <div class="container py-4">
+    <section class="about-section">
+        <div class="container">
             <div class="row">
                 <!-- Info Kontak -->
-                <div class="col-lg-5 mb-4 mb-lg-0">
-                    <h3 class="mb-4" style="color: var(--primary-color); font-weight: 700;">Info Kontak</h3>
-                    <ul class="contact-info ps-0 fs-5">
-                        <li><i class="fa-solid fa-location-dot"></i> Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta</li>
-                        <li><i class="fa-solid fa-phone"></i> <a href="#" data-link="wa" class="text-decoration-none">+62812345678</a></li>
-                        <li><i class="fa-solid fa-envelope"></i> <a href="#" data-link="email" class="text-decoration-none">info@riyadhulquran.sch.id</a></li>
-                    </ul>
-                    <h5 class="mt-4 mb-3" style="color: var(--primary-color); font-weight: 600;">Jam Pelayanan</h5>
-                    <p class="text-muted mb-1">Senin - Jumat : 07.30 - 15.30 WIB</p>
-                    <p class="text-muted">Sabtu : 08.00 - 12.00 WIB</p>
-                    <div class="mt-4">
-                        <a href="#" data-link="fb" class="me-3 fs-2 text-muted"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" data-link="ig" class="me-3 fs-2 text-muted"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" data-link="yt" class="fs-2 text-muted"><i class="fa-brands fa-youtube"></i></a>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <p class="section-label">INFORMASI KONTAK</p>
+                    <h3 class="serif-font fw-bold mb-4" style="color:var(--primary-green);">Kami Siap Membantu</h3>
+
+                    <div class="stat-card mb-3" style="align-items:flex-start;">
+                        <i class="fa-solid fa-location-dot mt-1"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1" style="color:var(--primary-green);">Alamat</h6>
+                            <p class="mb-0 text-muted small">Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card mb-3">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1" style="color:var(--primary-green);">WhatsApp</h6>
+                            <a href="#" data-link="wa" class="text-muted small text-decoration-none">Belum tersedia</a>
+                        </div>
+                    </div>
+
+                    <div class="stat-card mb-4">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1" style="color:var(--primary-green);">Email</h6>
+                            <a href="#" data-link="email" class="text-muted small text-decoration-none">Belum tersedia</a>
+                        </div>
+                    </div>
+
+                    <h6 class="fw-bold mb-2" style="color:var(--primary-green);">Jam Pelayanan</h6>
+                    <p class="text-muted small mb-1"><i class="fa-solid fa-clock me-2" style="color:var(--accent-gold-dark);"></i>Senin – Jumat: 07.30 – 15.30 WIB</p>
+                    <p class="text-muted small mb-4"><i class="fa-solid fa-clock me-2" style="color:var(--accent-gold-dark);"></i>Sabtu: 08.00 – 12.00 WIB</p>
+
+                    <h6 class="fw-bold mb-3" style="color:var(--primary-green);">Media Sosial</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" data-link="fb" class="btn btn-green btn-sm px-3"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" data-link="ig" class="btn btn-green btn-sm px-3"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" data-link="yt" class="btn btn-green btn-sm px-3"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
-                <!-- Formulir Kontak -->
-                <div class="col-lg-7">
-                    <div class="card border-0 shadow-sm p-4">
-                        <h4 class="mb-4" style="color: var(--primary-color); font-weight: 600;">Kirim Pesan</h4>
-                        <form id="form-kontak">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">Nama Lengkap</label>
-                                    <input type="text" name="nama" class="form-control" required>
+
+                <!-- Form Kontak -->
+                <div class="col-lg-8">
+                    <div class="program-card">
+                        <div class="program-card-header" style="background:var(--primary-green);">
+                            <i class="fa-solid fa-envelope fa-2x text-white"></i>
+                        </div>
+                        <div class="content p-4">
+                            <h5 class="mb-4">Kirim Pesan</h5>
+                            <form id="form-kontak">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-semibold">Nama Lengkap</label>
+                                        <input type="text" name="nama" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label fw-semibold">Email</label>
+                                        <input type="email" name="email" class="form-control" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label fw-semibold">Subjek</label>
+                                        <input type="text" name="subjek" class="form-control" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label fw-semibold">Pesan</label>
+                                        <textarea name="pesan" class="form-control" rows="5" required></textarea>
+                                    </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" required>
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <label class="form-label">Subjek</label>
-                                    <input type="text" name="subjek" class="form-control" required>
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <label class="form-label">Pesan</label>
-                                    <textarea name="pesan" class="form-control" rows="5" required></textarea>
-                                </div>
-                            </div>
-                            <div id="kontak-alert" class="alert d-none" role="alert"></div>
-                            <button type="submit" id="kontak-btn" class="btn btn-login px-4"><i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan</button>
-                        </form>
+                                <div id="kontak-alert" class="alert d-none" role="alert"></div>
+                                <button type="submit" id="kontak-btn" class="btn btn-apply px-4">
+                                    <i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,10 +120,14 @@
     </section>
 
     <!-- Peta -->
-    <section class="pb-5">
+    <section style="padding-bottom:80px;">
         <div class="container">
-            <div class="card border-0 shadow-sm overflow-hidden">
-                <iframe src="https://maps.google.com/maps?q=-7.850461,110.2631047&z=15&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="section-label text-center mb-2">LOKASI KAMI</p>
+            <h2 class="serif-font fw-bold text-center mb-4" style="color:var(--primary-green);">Temukan Kami di Sini</h2>
+            <div class="rounded overflow-hidden shadow" style="border:3px solid var(--border-light);">
+                <iframe src="https://maps.google.com/maps?q=-7.850461,110.2631047&z=15&output=embed"
+                    width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -101,8 +144,9 @@
             var data = Object.fromEntries(new FormData(this).entries());
             alertBox.classList.add('d-none');
             btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Mengirim...';
             try {
-                var res = await fetch('/api/kontak', {
+                var res = await fetch('/api/kontak.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
@@ -110,7 +154,7 @@
                 var json = await res.json();
                 if (res.ok) {
                     alertBox.className = 'alert alert-success';
-                    alertBox.textContent = 'Terima kasih! Pesan Anda telah terkirim.';
+                    alertBox.textContent = 'Terima kasih! Pesan Anda telah terkirim. Kami akan segera merespons.';
                     this.reset();
                 } else {
                     alertBox.className = 'alert alert-danger';
@@ -122,6 +166,7 @@
             }
             alertBox.classList.remove('d-none');
             btn.disabled = false;
+            btn.innerHTML = '<i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan';
         });
     </script>
 </body>

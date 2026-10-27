@@ -7,14 +7,23 @@
     <title>Riyadhul Quran - Kanal Berita</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+    <div class="top-bar d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div><i class="fa-solid fa-location-dot me-2"></i> Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta</div>
+            <div>
+                <a href="portal.html"><i class="fa-solid fa-user-group me-1"></i> Portal Wali</a>
+                <a href="admin-login.html"><i class="fa-solid fa-gauge me-1"></i> Admin</a>
+            </div>
+        </div>
+    </div>
+
     <nav id="site-navbar" class="navbar navbar-expand-lg sticky-top"></nav>
 
-    <!-- Page Header -->
     <header class="page-header">
         <div class="container">
             <h1>Kanal Berita</h1>
@@ -27,13 +36,19 @@
         </div>
     </header>
 
-    <!-- Daftar Berita -->
-    <section class="py-5">
-        <div class="container py-4">
-            <h2 class="section-title">Berita & Artikel Terkini</h2>
+    <section class="about-section">
+        <div class="container">
+            <p class="section-label text-center">INFORMASI TERKINI</p>
+            <h2 class="serif-font fw-bold text-center mb-5" style="color:var(--primary-green);">Berita & Artikel Terkini</h2>
             <div id="berita-container" class="row"></div>
-            <div id="berita-loading" class="text-center text-muted py-4"><i class="fa-solid fa-spinner fa-spin me-2"></i>Memuat berita...</div>
-            <div id="berita-empty" class="text-center text-muted py-4 d-none">Belum ada berita.</div>
+            <div id="berita-loading" class="text-center text-muted py-5">
+                <i class="fa-solid fa-spinner fa-spin fa-2x mb-3 d-block" style="color:var(--primary-green-light);"></i>
+                Memuat berita...
+            </div>
+            <div id="berita-empty" class="text-center text-muted py-5 d-none">
+                <i class="fa-solid fa-newspaper fa-2x mb-3 d-block" style="color:var(--border-light);"></i>
+                Belum ada berita.
+            </div>
         </div>
     </section>
 

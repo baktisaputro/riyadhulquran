@@ -7,14 +7,23 @@
     <title>Riyadhul Quran - Profil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
+    <div class="top-bar d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div><i class="fa-solid fa-location-dot me-2"></i> Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta</div>
+            <div>
+                <a href="portal.html"><i class="fa-solid fa-user-group me-1"></i> Portal Wali</a>
+                <a href="admin-login.html"><i class="fa-solid fa-gauge me-1"></i> Admin</a>
+            </div>
+        </div>
+    </div>
+
     <nav id="site-navbar" class="navbar navbar-expand-lg sticky-top"></nav>
 
-    <!-- Page Header -->
     <header class="page-header">
         <div class="container">
             <h1>Profil Pesantren</h1>
@@ -28,47 +37,54 @@
     </header>
 
     <!-- Tentang -->
-    <section class="py-5">
-        <div class="container py-4">
+    <section class="about-section">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="assets/img/profil.jpg" alt="Gedung Pesantren" class="img-fluid rounded shadow">
+                    <img src="https://images.unsplash.com/photo-1577894228498-854728522300?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Gedung Pesantren" class="img-fluid rounded shadow" style="max-height:380px; width:100%; object-fit:cover;">
                 </div>
-                <div class="col-lg-6 px-lg-4">
-                    <h2 class="mb-3" style="color: var(--primary-color); font-weight: 700;">Tentang Kami</h2>
-                    <p>Pondok Pesantren Tahfidz Quran Riyadhul Quran didirikan pada tahun 2014 dengan fokus utama pada program tahfidz Al-Qur'an. Kami membimbing santri untuk menghafal dan mengamalkan Al-Qur'an, memadukan bimbingan hafalan yang intensif dengan pembinaan akhlak dan disiplin.</p>
-                    <p>Dengan tenaga pengajar lulusan universitas terkemuka dalam dan luar negeri, kami berkomitmen memberikan pelayanan pendidikan terbaik bagi putra-putri Anda.</p>
+                <div class="col-lg-6 px-lg-5">
+                    <p class="section-label">TENTANG KAMI</p>
+                    <h2 class="serif-font fw-bold mb-2" style="color:var(--primary-green);">Tentang Riyadhul Quran</h2>
+                    <p class="subtitle mb-4">Berdiri Sejak 2014</p>
+                    <p class="text-muted">Pondok Pesantren Tahfidz Quran Riyadhul Quran didirikan pada tahun 2014 dengan fokus utama pada program tahfidz Al-Qur'an. Kami membimbing santri untuk menghafal dan mengamalkan Al-Qur'an, memadukan bimbingan hafalan yang intensif dengan pembinaan akhlak dan disiplin.</p>
+                    <p class="text-muted">Dengan tenaga pengajar lulusan universitas terkemuka dalam dan luar negeri, kami berkomitmen memberikan pelayanan pendidikan terbaik bagi putra-putri Anda.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Visi & Misi -->
-    <section class="py-5 bg-light">
-        <div class="container py-4">
-            <h2 class="section-title">Visi & Misi</h2>
+    <section class="programs-section">
+        <div class="container">
+            <p class="section-label text-center">ARAH & TUJUAN</p>
+            <h2 class="serif-font fw-bold text-center mb-5" style="color:var(--primary-green);">Visi & Misi</h2>
             <div class="row">
                 <div class="col-lg-6 mb-4">
-                    <div class="card h-100 border-0 shadow-sm p-4">
-                        <div class="text-center mb-3">
-                            <i class="fa-solid fa-eye fasilitas-icon"></i>
+                    <div class="program-card h-100">
+                        <div class="program-card-header" style="background:var(--primary-green);">
+                            <i class="fa-solid fa-eye fa-2x text-white"></i>
                         </div>
-                        <h4 class="text-center mb-3" style="color: var(--primary-color); font-weight: 600;">Visi</h4>
-                        <p class="text-muted mb-0">Terwujudnya generasi hafizh yang berakhlakul karimah, mencintai dan mengamalkan Al-Qur'an, serta berilmu pengetahuan untuk menjadi teladan bagi umat.</p>
+                        <div class="content">
+                            <h5>Visi</h5>
+                            <p>Terwujudnya generasi hafizh yang berakhlakul karimah, mencintai dan mengamalkan Al-Qur'an, serta berilmu pengetahuan untuk menjadi teladan bagi umat.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <div class="card h-100 border-0 shadow-sm p-4">
-                        <div class="text-center mb-3">
-                            <i class="fa-solid fa-bullseye fasilitas-icon"></i>
+                    <div class="program-card h-100">
+                        <div class="program-card-header" style="background:var(--primary-green-mid);">
+                            <i class="fa-solid fa-bullseye fa-2x text-white"></i>
                         </div>
-                        <h4 class="text-center mb-3" style="color: var(--primary-color); font-weight: 600;">Misi</h4>
-                        <ul class="text-muted mb-0">
-                            <li>Menyelenggarakan pembinaan tahfidz Al-Qur'an yang terarah dan berkelanjutan.</li>
-                            <li>Menanamkan nilai-nilai Al-Qur'an dan akhlakul karimah pada setiap santri.</li>
-                            <li>Membentuk santri yang mandiri, disiplin, dan berjiwa sosial.</li>
-                            <li>Menyiapkan generasi hafizh yang cakap dan bermanfaat bagi umat.</li>
-                        </ul>
+                        <div class="content">
+                            <h5>Misi</h5>
+                            <ul class="text-muted mb-0 ps-3">
+                                <li class="mb-2">Menyelenggarakan pembinaan tahfidz Al-Qur'an yang terarah dan berkelanjutan.</li>
+                                <li class="mb-2">Menanamkan nilai-nilai Al-Qur'an dan akhlakul karimah pada setiap santri.</li>
+                                <li class="mb-2">Membentuk santri yang mandiri, disiplin, dan berjiwa sosial.</li>
+                                <li>Menyiapkan generasi hafizh yang cakap dan bermanfaat bagi umat.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,15 +92,44 @@
     </section>
 
     <!-- Sejarah -->
-    <section class="py-5">
-        <div class="container py-4">
-            <h2 class="section-title">Sejarah Singkat</h2>
+    <section class="about-section" style="padding-top:0;">
+        <div class="container">
+            <p class="section-label text-center">PERJALANAN KAMI</p>
+            <h2 class="serif-font fw-bold text-center mb-5" style="color:var(--primary-green);">Sejarah Singkat</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <p class="text-muted">Pondok Pesantren Tahfidz Quran Riyadhul Quran berdiri sejak tahun 2014 di kawasan Pajangan, Bantul, DI Yogyakarta. Berawal dari sebuah majelis kecil, pesantren ini tumbuh menjadi lembaga yang berfokus membina santri dalam menghafal dan memelihara Al-Qur'an.</p>
-                    <p class="text-muted">Hingga kini, Riyadhul Quran terus berkomitmen mencetak generasi hafizh yang berprestasi dan berakhlakul karimah, dengan dukungan asrama yang nyaman, tenaga pengajar profesional lulusan dalam dan luar negeri, serta lingkungan asri yang mendukung fokus menghafal Al-Qur'an.</p>
+                <div class="col-lg-8">
+                    <div class="stat-card mb-4" style="align-items:flex-start; padding:25px 30px;">
+                        <i class="fa-solid fa-landmark mt-1" style="font-size:2rem;"></i>
+                        <div>
+                            <h5 class="mb-2">2014 — Berdiri</h5>
+                            <p class="text-muted mb-0">Pondok Pesantren Tahfidz Quran Riyadhul Quran berdiri di kawasan Pajangan, Bantul, DI Yogyakarta. Berawal dari sebuah majelis kecil yang tumbuh menjadi lembaga tahfidz yang berfokus membina santri dalam menghafal dan memelihara Al-Qur'an.</p>
+                        </div>
+                    </div>
+                    <div class="stat-card mb-4" style="align-items:flex-start; padding:25px 30px;">
+                        <i class="fa-solid fa-graduation-cap mt-1" style="font-size:2rem;"></i>
+                        <div>
+                            <h5 class="mb-2">Berkembang — 4 Unit Pendidikan</h5>
+                            <p class="text-muted mb-0">Kini Riyadhul Quran menaungi MTs, MA, PKBM, dan Pondok Putri — melayani santri dari berbagai jenjang dengan program tahfidz yang terintegrasi di setiap unit.</p>
+                        </div>
+                    </div>
+                    <div class="stat-card" style="align-items:flex-start; padding:25px 30px;">
+                        <i class="fa-solid fa-star mt-1" style="font-size:2rem;"></i>
+                        <div>
+                            <h5 class="mb-2">Komitmen — Mencetak Generasi Hafizh</h5>
+                            <p class="text-muted mb-0">Dengan dukungan asrama yang nyaman, tenaga pengajar profesional lulusan dalam dan luar negeri, serta lingkungan asri yang mendukung fokus menghafal Al-Qur'an.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="stats-banner text-center">
+        <div class="container">
+            <h2 class="serif-font fw-bold mb-3">Ingin Bergabung?</h2>
+            <p class="lead mb-4" style="color:rgba(255,255,255,0.8);">Mari jadikan putra-putri Anda bagian dari generasi Qur'ani Riyadhul Quran.</p>
+            <a href="psb.html" class="btn btn-apply text-decoration-none px-5">DAFTAR SEKARANG <i class="fa-solid fa-arrow-right ms-2"></i></a>
         </div>
     </section>
 

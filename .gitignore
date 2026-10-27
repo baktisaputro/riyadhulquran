@@ -15,3 +15,7 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+# Config server (cPanel)
+api/config.local.php
+.logs/
+server.log

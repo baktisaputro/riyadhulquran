@@ -1,0 +1,18 @@
+Options -Indexes
+
+# ===== Routing API =====
+# Ubah /api/berita → /api/berita.php, dst.
+RewriteEngine On
+
+# Jangan proses jika file/folder sudah ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route /api/health
+RewriteRule ^api/health$ api/health.php [L]
+
+# Route /api/{endpoint} → /api/{endpoint}.php
+RewriteRule ^api/([a-z_]+)$ api/$1.php [L]
+
+# Semua request lain → index.html (SPA-style, opsional)
+# RewriteRule ^ index.html [L]

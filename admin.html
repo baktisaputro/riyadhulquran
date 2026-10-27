@@ -6,114 +6,46 @@
     <title>Admin Panel - Riyadhul Quran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #8A9E2A;
-            --primary-dark: #6B7A20;
-            --secondary-color: #FCCD0D;
-            --text-dark: #3D3D3D;
-            --bg-light: #FAFAF5;
+            --primary-green:      #2D4A0F;
+            --primary-green-mid:  #4A7A1A;
+            --accent-gold:        #FCCD0D;
+            --accent-gold-dark:   #D4A800;
+            --text-dark:          #2B2B2B;
+            --bg-light:           #F8F9FA;
+            --bg-alt:             #F4F7E8;
         }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-        }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-light); color: var(--text-dark); }
         .admin-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: white;
-            padding: 30px 0;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-mid));
+            color: white; padding: 28px 0; margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .admin-header h1 {
-            font-weight: 700;
-            margin: 0;
-        }
-        .card-section {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 20px;
-        }
+        .admin-header h1 { font-weight: 700; margin: 0; font-size: 1.5rem; }
+        .card-section { border: none; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.07); margin-bottom: 20px; }
         .card-section .card-header {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 12px 12px 0 0;
-            font-weight: 600;
+            background: var(--primary-green); color: white;
+            border: none; border-radius: 10px 10px 0 0; font-weight: 600;
         }
-        .form-label {
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 8px;
+        .form-label { font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-green-mid);
+            box-shadow: 0 0 0 0.25rem rgba(45,74,15,0.15);
         }
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.25rem rgba(138, 158, 42, 0.25);
-        }
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            font-weight: 600;
-        }
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            border-color: var(--primary-dark);
-        }
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-        .btn-secondary:hover {
-            background-color: #E0B800;
-            border-color: #E0B800;
-        }
-        .preview-img {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 8px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-        }
-        .alert-custom {
-            border-radius: 8px;
-            border: none;
-        }
-        .data-table {
-            font-size: 0.9rem;
-        }
-        .data-table th {
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 600;
-        }
-        .data-table tr:hover {
-            background-color: rgba(138, 158, 42, 0.05);
-        }
-        .badge-status {
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-        .nav-tabs .nav-link {
-            color: var(--text-dark);
-            border-color: transparent;
-            font-weight: 600;
-        }
-        .nav-tabs .nav-link.active {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        .input-group-text {
-            background-color: #f8f9fa;
-            border-color: #dee2e6;
-        }
+        .btn-primary { background-color: var(--primary-green); border-color: var(--primary-green); font-weight: 600; }
+        .btn-primary:hover { background-color: var(--primary-green-mid); border-color: var(--primary-green-mid); }
+        .btn-secondary { background-color: var(--accent-gold); border-color: var(--accent-gold); color: var(--primary-green); font-weight: 600; }
+        .btn-secondary:hover { background-color: var(--accent-gold-dark); border-color: var(--accent-gold-dark); color: var(--primary-green); }
+        .preview-img { max-width: 100%; max-height: 260px; border-radius: 8px; margin-top: 10px; border: 1px solid #ddd; }
+        .alert-custom { border-radius: 8px; border: none; }
+        .data-table th { background-color: var(--primary-green); color: white; font-weight: 600; }
+        .data-table tr:hover { background-color: rgba(45,74,15,0.04); }
+        .nav-tabs .nav-link { color: var(--text-dark); border-color: transparent; font-weight: 600; }
+        .nav-tabs .nav-link.active { background-color: var(--primary-green); color: white; border-color: var(--primary-green); }
+        .nav-tabs .nav-link:hover:not(.active) { color: var(--primary-green); background: var(--bg-alt); }
+        .input-group-text { background-color: #f8f9fa; border-color: #dee2e6; }
     </style>
 </head>
 <body>
@@ -396,5 +328,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/admin.js"></script>
+    <script>
+        // Auth guard — cek session PHP sebelum halaman tampil
+        (function() {
+            fetch('api/admin-login.php', { method: 'GET', credentials: 'same-origin' })
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                    if (!data.logged_in) {
+                        window.location.replace('admin-login.html');
+                    }
+                })
+                .catch(function() {
+                    window.location.replace('admin-login.html');
+                });
+        })();
+    </script>
 </body>
 </html>

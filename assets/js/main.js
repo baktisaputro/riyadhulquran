@@ -1,24 +1,20 @@
 // ===== Pondok Pesantren Riyadhul Quran - main.js =====
-// Konfigurasi (ganti sesuai kebutuhan)
 window.SITE_NAME = 'Riyadhul Quran';
-// URL subdomain pendaftaran (akan diintegrasikan setelah dibangun)
-window.REGISTRATION_URL = 'https://psb.riyadhulquran.sch.id';
-// Inject navbar & footer bersama, menandai menu aktif, smooth scroll.
+window.REGISTRATION_URL = 'psb.html';
 
 (function () {
     'use strict';
 
-    // Nama file halaman saat ini (mis. "index.html", "profil.html")
     var page = (location.pathname.split('/').pop() || 'index.html');
 
     var navLinks = [
-        { page: 'index.html', label: 'Beranda', href: 'index.html', icon: '' },
-        { page: 'profil.html', label: 'Profil', href: 'profil.html', icon: '' },
-        { page: 'unit.html', label: 'Unit Pesantren', href: 'unit.html', icon: '' },
-        { page: 'fasilitas.html', label: 'Fasilitas', href: 'fasilitas.html', icon: '' },
-        { page: 'berita.html', label: 'Kanal Berita', href: 'berita.html', icon: '' },
-        { page: 'psb.html', label: 'Penerimaan Santri', href: 'psb.html', icon: '' },
-        { page: 'kontak.html', label: 'Hubungi Kami', href: 'kontak.html', icon: '' }
+        { page: 'index.html',    label: 'Beranda',           href: 'index.html' },
+        { page: 'profil.html',   label: 'Profil',            href: 'profil.html' },
+        { page: 'unit.html',     label: 'Unit Pesantren',    href: 'unit.html' },
+        { page: 'fasilitas.html',label: 'Fasilitas',         href: 'fasilitas.html' },
+        { page: 'berita.html',   label: 'Kanal Berita',      href: 'berita.html' },
+        { page: 'psb.html',      label: 'Penerimaan Santri', href: 'psb.html' },
+        { page: 'kontak.html',   label: 'Hubungi Kami',      href: 'kontak.html' }
     ];
 
     var navbar = document.getElementById('site-navbar');
@@ -33,17 +29,20 @@ window.REGISTRATION_URL = 'https://psb.riyadhulquran.sch.id';
 
         navbar.innerHTML =
             '<div class="container">' +
-                '<a class="navbar-brand d-flex align-items-center" href="index.html"><img src="assets/img/logo-rq.svg" alt="Logo Riyadhul Quran" style="height:42px; width:auto; margin-right:10px;"> Riyadhul Quran</a>' +
-                '<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">' +
+                '<a class="navbar-brand" href="index.html">' +
+                    '<img src="assets/img/logo-rq.svg" alt="Logo Riyadhul Quran">' +
+                    'Riyadhul Quran' +
+                '</a>' +
+                '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">' +
                     '<span class="navbar-toggler-icon"></span>' +
                 '</button>' +
                 '<div class="collapse navbar-collapse" id="navbarNav">' +
-                    '<ul class="navbar-nav ms-auto align-items-center">' +
+                    '<ul class="navbar-nav mx-auto">' +
                         links +
-                        '<li class="nav-item ms-lg-3 mt-2 mt-lg-0">' +
-                            '<a class="btn btn-login" href="portal.html"><i class="fa-solid fa-user-graduate me-1"></i> Portal Wali</a>' +
-                        '</li>' +
                     '</ul>' +
+                    '<a class="btn btn-apply text-decoration-none ms-lg-3 mt-2 mt-lg-0" href="psb.html">' +
+                        'DAFTAR SEKARANG' +
+                    '</a>' +
                 '</div>' +
             '</div>';
     }
@@ -53,40 +52,64 @@ window.REGISTRATION_URL = 'https://psb.riyadhulquran.sch.id';
         footer.innerHTML =
             '<div class="container">' +
                 '<div class="row">' +
-                    '<div class="col-lg-4 mb-4">' +
-                        '<h5 class="footer-title d-flex align-items-center"><img src="assets/img/logo-rq.svg" alt="Logo" style="height:34px; width:auto; margin-right:10px;"> Riyadhul Quran</h5>' +
-                        '<p class="text-muted">Pondok Pesantren Tahfidz Quran Riyadhul Quran, didirikan tahun 2014, fokus mencetak generasi penghafal Al-Qur\u2019an dengan tenaga pengajar lulusan terkemuka dalam dan luar negeri.</p>' +
+                    // Kolom 1: Brand
+                    '<div class="col-lg-3 col-md-6 mb-4">' +
+                        '<h5 class="footer-title d-flex align-items-center gap-2">' +
+                            '<img src="assets/img/logo-rq.svg" alt="Logo" style="height:32px; width:auto; filter:brightness(10);">' +
+                            'Riyadhul Quran' +
+                        '</h5>' +
+                        '<p style="color:rgba(255,255,255,0.65); font-size:0.88rem; line-height:1.7;">' +
+                            'Mendidik akal, membentuk akhlak. Mencetak generasi hafizh yang rabbani sejak 2014.' +
+                        '</p>' +
+                        '<div class="mt-3 d-flex gap-3">' +
+                            '<a href="#" data-link="fb" style="font-size:1.3rem;"><i class="fa-brands fa-facebook"></i></a>' +
+                            '<a href="#" data-link="ig" style="font-size:1.3rem;"><i class="fa-brands fa-instagram"></i></a>' +
+                            '<a href="#" data-link="yt" style="font-size:1.3rem;"><i class="fa-brands fa-youtube"></i></a>' +
+                        '</div>' +
                     '</div>' +
-                    '<div class="col-lg-3 mb-4">' +
+                    // Kolom 2: Tautan Cepat
+                    '<div class="col-lg-2 col-md-6 mb-4">' +
                         '<h5 class="footer-title">Tautan Cepat</h5>' +
-                        '<ul class="list-unstyled">' +
-                            '<li><a href="profil.html" class="text-muted text-decoration-none">Profil Pesantren</a></li>' +
-                            '<li><a href="unit.html" class="text-muted text-decoration-none">Unit Pesantren</a></li>' +
-                            '<li><a href="psb.html" class="text-muted text-decoration-none">Penerimaan Santri Baru</a></li>' +
-                            '<li><a href="portal.html" class="text-muted text-decoration-none">Portal Akademik Wali Santri</a></li>' +
-                            '<li><a href="berita.html" class="text-muted text-decoration-none">Kanal Berita</a></li>' +
-                            '<li><a href="kontak.html" class="text-muted text-decoration-none">Hubungi Kami</a></li>' +
+                        '<ul class="footer-links">' +
+                            '<li><a href="profil.html">Profil Pesantren</a></li>' +
+                            '<li><a href="unit.html">Unit Pesantren</a></li>' +
+                            '<li><a href="fasilitas.html">Fasilitas</a></li>' +
+                            '<li><a href="berita.html">Kanal Berita</a></li>' +
+                            '<li><a href="psb.html">Penerimaan Santri</a></li>' +
+                            '<li><a href="kontak.html">Hubungi Kami</a></li>' +
                         '</ul>' +
                     '</div>' +
-                    '<div class="col-lg-5 mb-4">' +
-                        '<h5 class="footer-title">Hubungi Kami</h5>' +
-                        '<ul class="contact-info ps-0">' +
-                            '<li><i class="fa-solid fa-location-dot"></i> Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta</li>' +
+                    // Kolom 3: Portal
+                    '<div class="col-lg-2 col-md-6 mb-4">' +
+                        '<h5 class="footer-title">Portal</h5>' +
+                        '<ul class="footer-links">' +
+                            '<li><a href="portal.html">Portal Wali Santri</a></li>' +
+                            '<li><a href="unit-ma.html">Madrasah Aliyah</a></li>' +
+                            '<li><a href="unit-mts.html">Madrasah Tsanawiyah</a></li>' +
+                            '<li><a href="unit-pkbm.html">PKBM</a></li>' +
+                            '<li><a href="unit-putri.html">Pondok Putri</a></li>' +
                         '</ul>' +
-                        '<div class="mt-3">' +
-                            '<iframe src="https://maps.google.com/maps?q=-7.850461,110.2631047&z=15&output=embed" width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
+                    '</div>' +
+                    // Kolom 4: Kontak
+                    '<div class="col-lg-5 col-md-6 mb-4">' +
+                        '<h5 class="footer-title">Hubungi Kami</h5>' +
+                        '<ul class="contact-info">' +
+                            '<li><i class="fa-solid fa-location-dot"></i> Kadiresa RT 06, Triwidadi, Pajangan, Bantul, Yogyakarta</li>' +
+                            '<li><i class="fa-solid fa-phone"></i> <a href="#" data-link="wa">Belum tersedia</a></li>' +
+                            '<li><i class="fa-solid fa-envelope"></i> <a href="#" data-link="email">Belum tersedia</a></li>' +
+                        '</ul>' +
+                        '<div class="mt-3" style="border-radius:8px; overflow:hidden;">' +
+                            '<iframe src="https://maps.google.com/maps?q=-7.850461,110.2631047&z=15&output=embed" width="100%" height="140" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
-                '<hr class="border-secondary mt-4">' +
-                '<div class="row text-center text-md-start align-items-center">' +
-                    '<div class="col-md-6 text-muted">' +
-                        '<small>&copy; ' + new Date().getFullYear() + ' Pondok Pesantren Riyadhul Quran. All Rights Reserved.</small>' +
+                '<hr>' +
+                '<div class="row footer-bottom align-items-center">' +
+                    '<div class="col-md-6 text-center text-md-start">' +
+                        '&copy; ' + new Date().getFullYear() + ' Pondok Pesantren Riyadhul Quran. All Rights Reserved.' +
                     '</div>' +
-                    '<div class="col-md-6 text-md-end mt-3 mt-md-0">' +
-                        '<a href="#" class="text-muted me-3 fs-5"><i class="fa-brands fa-facebook"></i></a>' +
-                        '<a href="#" class="text-muted me-3 fs-5"><i class="fa-brands fa-instagram"></i></a>' +
-                        '<a href="#" class="text-muted fs-5"><i class="fa-brands fa-youtube"></i></a>' +
+                    '<div class="col-md-6 text-center text-md-end mt-2 mt-md-0">' +
+                        '<a href="admin.html" style="font-size:0.8rem; opacity:0.4;">Admin Panel</a>' +
                     '</div>' +
                 '</div>' +
             '</div>';
@@ -111,7 +134,7 @@ window.REGISTRATION_URL = 'https://psb.riyadhulquran.sch.id';
         var loading = document.getElementById('berita-loading');
         var empty = document.getElementById('berita-empty');
 
-        fetch('/api/berita')
+        fetch('/api/berita.php')
             .then(function (res) { return res.json(); })
             .then(function (items) {
                 if (loading) loading.style.display = 'none';
