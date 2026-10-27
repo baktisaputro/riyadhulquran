@@ -161,19 +161,27 @@ window.REGISTRATION_URL = 'psb.html';
                     var card = document.createElement('div');
                     card.className = 'card card-berita h-100';
 
+                    var kirimPlaceholder = function () {
+                        var ph = document.createElement('div');
+                        ph.className = 'card-img-top';
+                        ph.style.cssText = 'height:200px;background:linear-gradient(135deg,var(--primary-green),var(--primary-green-light));';
+                        card.appendChild(ph);
+                        return ph;
+                    };
+
                     var imgSrc = b.gambar ? safeImageUrl(b.gambar) : '';
                     if (imgSrc) {
                         var img = document.createElement('img');
-                        img.src = imgSrc;
                         img.className = 'card-img-top';
                         img.alt = b.judul || 'Berita';
                         img.loading = 'lazy';
+                        img.onerror = function () {
+                            if (img.parentNode) img.parentNode.replaceChild(kirimPlaceholder(), img);
+                        };
+                        img.src = imgSrc;
                         card.appendChild(img);
                     } else {
-                        var ph = document.createElement('div');
-                        ph.className = 'card-img-top';
-                        ph.style.cssText = 'height:200px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));';
-                        card.appendChild(ph);
+                        kirimPlaceholder();
                     }
 
                     var body = document.createElement('div');
