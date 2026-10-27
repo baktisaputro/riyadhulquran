@@ -144,26 +144,74 @@ window.REGISTRATION_URL = 'psb.html';
                 }
                 if (limit) items = items.slice(0, limit);
 
-                var html = items.map(function (b) {
-                    var img = b.gambar
-                        ? '<img src="' + b.gambar + '" class="card-img-top" alt="' + b.judul + '">'
-                        : '<div class="card-img-top" style="height:200px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));"></div>';
-                    var tgl = new Date(b.tanggal + 'T00:00:00');
-                    var tglStr = tgl.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-                    return '<div class="col-lg-4 col-md-6 mb-4">' +
-                        '<div class="card card-berita h-100">' +
-                            img +
-                            '<div class="card-body">' +
-                                '<small class="text-muted"><i class="fa-regular fa-calendar-days me-1"></i> ' + tglStr + '</small>' +
-                                '<h5 class="card-title mt-2">' + b.judul + '</h5>' +
-                                '<p class="card-text">' + b.konten + '</p>' +
-                                '<a href="#" class="link-theme">Baca Selengkapnya &rarr;</a>' +
-                            '</div>' +
-                        '</div>' +
-                    '</div>';
-                }).join('');
+                var safeImageUrl = function (value) {
+                    try {
+                        var url = new URL(value, location.href);
+                        return (url.protocol === 'http:' || url.protocol === 'https:') ? url.href : '';
+                    } catch (e) {
+                        return '';
+                    }
+                };
 
-                container.innerHTML = html;
+                container.innerHTML = '';
+                items.forEach(function (b) {
+                    var col = document.createElement('div');
+                    col.className = 'col-lg-4 col-md-6 mb-4';
+
+                    var card = document.createElement('div');
+                    card.className = 'card card-berita h-100';
+
+                    var imgSrc = b.gambar ? safeImageUrl(b.gambar) : '';
+                    if (imgSrc) {
+                        var img = document.createElement('img');
+                        img.src = imgSrc;
+                        img.className = 'card-img-top';
+                        img.alt = b.judul || 'Berita';
+                        img.loading = 'lazy';
+                        card.appendChild(img);
+                    } else {
+                        var ph = document.createElement('div');
+                        ph.className = 'card-img-top';
+                        ph.style.cssText = 'height:200px;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));';
+                        card.appendChild(ph);
+                    }
+
+                    var body = document.createElement('div');
+                    body.className = 'card-body';
+
+                    var tgl = new Date(b.tanggal + 'T00:00:00');
+                    var tglStr = isNaN(tgl.getTime())
+                        ? ''
+                        : tgl.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
+                    var small = document.createElement('small');
+                    small.className = 'text-muted';
+                    var icon = document.createElement('i');
+                    icon.className = 'fa-regular fa-calendar-days me-1';
+                    small.appendChild(icon);
+                    small.appendChild(document.createTextNode(' ' + tglStr));
+
+                    var title = document.createElement('h5');
+                    title.className = 'card-title mt-2';
+                    title.textContent = b.judul || '';
+
+                    var text = document.createElement('p');
+                    text.className = 'card-text';
+                    text.textContent = b.konten || '';
+
+                    var link = document.createElement('a');
+                    link.href = '#';
+                    link.className = 'link-theme';
+                    link.textContent = 'Baca Selengkapnya \u2192';
+
+                    body.appendChild(small);
+                    body.appendChild(title);
+                    body.appendChild(text);
+                    body.appendChild(link);
+                    card.appendChild(body);
+                    col.appendChild(card);
+                    container.appendChild(col);
+                });
             })
             .catch(function () {
                 if (loading) loading.style.display = 'none';

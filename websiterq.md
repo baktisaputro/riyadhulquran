@@ -153,7 +153,7 @@ UPDATE wali SET password = '$2y$10$...' WHERE username = 'ahmad';
 1. Tambah halaman detail berita (`berita-detail.php`)
 2. API manajemen berita via admin panel (CRUD berita)
 3. Upload foto langsung ke server (bukan localStorage)
-4. Favicon & Open Graph meta tags
+4. ~~Favicon & Open Graph meta tags~~ ✅ (favicon.svg/ico, apple-touch-icon, og-image.png)
 5. Google Analytics
 6. HTTPS redirect di `.htaccess`
 
