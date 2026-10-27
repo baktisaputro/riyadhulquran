@@ -30,12 +30,9 @@ if (!$username || !$password) {
     json_out(['error' => 'Username dan password wajib diisi'], 400);
 }
 
-// Credentials admin — ganti sebelum production
+// Credentials admin
 define('ADMIN_USERNAME', 'admin');
-define('ADMIN_PASSWORD_HASH', password_hash('admin123', PASSWORD_DEFAULT));
-
-// Untuk production, hardcode hash-nya:
-// define('ADMIN_PASSWORD_HASH', '$2y$10$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+define('ADMIN_PASSWORD_HASH', '$2y$12$zfsc4yA6L1J7z1D8CzOi2unoUowxBl9YzFpawcg1veyPzX7wJ60lq');
 
 if ($username !== ADMIN_USERNAME || !password_verify($password, ADMIN_PASSWORD_HASH)) {
     // Delay untuk mencegah brute force
